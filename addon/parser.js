@@ -38,8 +38,8 @@ class Parser {
     let aliasedNameOrNull = this._getAliasedName(normalizedRelName, normalizedType);
 
     let field = new Type.Field(
-      normalizedType,
-      aliasedNameOrNull,
+      aliasedNameOrNull || normalizedType,
+      null,
       new Type.ArgumentSet(),
       new Type.SelectionSet(new Type.Field('id'))
     );
